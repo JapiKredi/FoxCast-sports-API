@@ -55,6 +55,7 @@ Be free to comment or recommend features—new ones are added frequently! 💡
     - [Retrieve Events](#1-retrieve-events)
     - [Retrieve Results by League](#2-retrieve-results-by-league)
     - [Retrieve Results by Event ID](#3-retrieve-results-by-event-id)
+    - [Retrieve Available League IDs (BBIDs)](#4-retrieve-available-league-ids-bbids)
 5. [Supported Championships](#supported-championships)
 6. [Examples](#examples)
 7. [Error Handling](#error-handling)
@@ -136,6 +137,21 @@ Retrieve the result for a specific event.
 #### **Example Request**
 ```bash
 curl -X GET "https://www.playfoxcast.com/server/endpoint/results/1358253"
+```
+---
+
+### 4. Retrieve Available League IDs (BBIDs)
+Retrieve all active and supported league identifiers (`bbid`) that can be used with `/events` and `/results` endpoints.
+
+- **Method**: `GET`
+- **URL**: `/league_ids/`
+
+#### **Response**
+A list of leagues with their corresponding identifiers (`bbid`), including essential metadata like region, sport, and championship.
+
+#### **Example Request**
+```bash
+curl -X GET "https://www.playfoxcast.com/server/endpoint/league_ids/"
 ```
 
 ---
@@ -237,4 +253,4 @@ The API uses standard HTTP status codes to indicate the success or failure of a 
 
 ## Contact
 
-For questions or support, please contact the FoxCast team at [support@foxcast.com](mailto:support@foxcast.com).
+For questions or support, please contact the FoxCast team at [support@playfoxcast.com](mailto:support@playfoxcast.com).
