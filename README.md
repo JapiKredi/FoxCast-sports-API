@@ -56,6 +56,7 @@ Be free to comment or recommend features—new ones are added frequently! 💡
     - [Retrieve Results by League](#2-retrieve-results-by-league)
     - [Retrieve Results by Event ID](#3-retrieve-results-by-event-id)
     - [Retrieve Available League IDs (BBIDs)](#4-retrieve-available-league-ids-bbids)
+    - [Retrieve Standings](#5-retrieve-standings)
 5. [Supported Championships](#supported-championships)
 6. [Examples](#examples)
 7. [Error Handling](#error-handling)
@@ -153,6 +154,21 @@ A list of leagues with their corresponding identifiers (`bbid`), including essen
 ```bash
 curl -X GET "https://www.playfoxcast.com/server/endpoint/league_ids/"
 ```
+---
+
+### 5. Retrieve Standings
+Get the current standing of a league (table of positions), requires (`bbid`).
+
+- **Method**: `GET`
+- **URL**: `/standings/`
+
+#### **Response**
+A list of the teams and positions of the corresponding identifier (`bbid`), some bbids or leagues do not have a standing.
+
+#### **Example Request**
+```bash
+curl -X GET "https://www.playfoxcast.com/server/endpoint/standings/121212"
+```
 
 ---
 
@@ -244,10 +260,11 @@ The API uses standard HTTP status codes to indicate the success or failure of a 
 
 ## Changelog
 
-### v1.0.0 - Initial Release
+### v1.0.1 - Initial Release
 - Added `/events/{bbid}` endpoint to retrieve event data for a league.
 - Added `/results/{league_id}` endpoint to retrieve results for a league.
 - Added `/results/{event_id}` endpoint to retrieve results for a specific event.
+- Added `/standings/{league_id}` endpoint to retrieve standings for a specific league.
 
 ---
 
